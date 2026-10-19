@@ -1,0 +1,20 @@
+name: Stale verification check
+on:
+  schedule:
+    - cron: "41 6 1 * *" # monthly
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Report entries not verified in the last 180 days
+        run: node scripts/stale-report.mjs

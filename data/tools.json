@@ -1,0 +1,1764 @@
+{
+  "schemaVersion": 2,
+  "lastResearchDate": "2026-10-18",
+  "tools": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "provider": "OpenAI",
+      "aliases": [],
+      "categories": {
+        "primary": "assistants",
+        "secondary": []
+      },
+      "description": {
+        "en": "OpenAI's conversational assistant.",
+        "fr": "Assistant conversationnel d'OpenAI."
+      },
+      "urls": {
+        "product": "https://chatgpt.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://chatgpt.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": false
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://chatgpt.com/unauth-mweb/favicon.ico",
+        "file": null
+      },
+      "notes": {
+        "en": "The page does not name a company. The provider field is not confirmed.",
+        "fr": "La page ne nomme aucune société. Le fournisseur n'est pas confirmé."
+      }
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "provider": "Anthropic",
+      "aliases": [],
+      "categories": {
+        "primary": "assistants",
+        "secondary": []
+      },
+      "description": {
+        "en": "Anthropic's conversational assistant.",
+        "fr": "Assistant conversationnel d'Anthropic."
+      },
+      "urls": {
+        "product": "https://claude.ai",
+        "docs": "https://platform.claude.com/docs",
+        "repository": null,
+        "pricing": "https://claude.com/pricing"
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://claude.ai/login",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg",
+        "file": null
+      },
+      "notes": {
+        "en": "The docs link is the developer platform documentation linked from the official page.",
+        "fr": "Le lien de documentation est celui de la plateforme développeur, indiqué par la page officielle."
+      }
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "provider": "Google",
+      "aliases": [],
+      "categories": {
+        "primary": "assistants",
+        "secondary": []
+      },
+      "description": {
+        "en": "Google's conversational assistant.",
+        "fr": "Assistant conversationnel de Google."
+      },
+      "urls": {
+        "product": "https://gemini.google.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://gemini.google.com/app",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "le-chat",
+      "name": "Vibe by Mistral (formerly Le Chat)",
+      "provider": "Mistral AI",
+      "aliases": [
+        "Le Chat"
+      ],
+      "categories": {
+        "primary": "assistants",
+        "secondary": []
+      },
+      "description": {
+        "en": "Mistral AI's AI agent and assistant for work and code, formerly named Le Chat.",
+        "fr": "Agent et assistant IA de Mistral AI pour le travail et le code, anciennement nommé Le Chat."
+      },
+      "urls": {
+        "product": "https://chat.mistral.ai",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://chat.mistral.ai/chat",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://chat.mistral.ai/favicons/favicon.ico",
+        "file": null
+      },
+      "notes": {
+        "en": "The official page now presents the product as “Vibe by Mistral (formerly Le Chat)”.",
+        "fr": "La page officielle présente désormais le produit comme « Vibe by Mistral (anciennement Le Chat) »."
+      }
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek Chat",
+      "provider": "DeepSeek",
+      "aliases": [],
+      "categories": {
+        "primary": "assistants",
+        "secondary": []
+      },
+      "description": {
+        "en": "DeepSeek's web chat assistant.",
+        "fr": "Assistant de chat web de DeepSeek."
+      },
+      "urls": {
+        "product": "https://chat.deepseek.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://chat.deepseek.com/sign_in",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://fe-static.deepseek.com/chat/favicon.svg",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "provider": "Anysphere",
+      "aliases": [],
+      "categories": {
+        "primary": "coding",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI-first code editor.",
+        "fr": "Éditeur de code orienté IA."
+      },
+      "urls": {
+        "product": "https://cursor.com",
+        "docs": "https://cursor.com/docs",
+        "repository": null,
+        "pricing": "https://cursor.com/pricing"
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://cursor.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://cursor.com/marketing-static/icon-192x192-light.png",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "provider": "GitHub",
+      "aliases": [],
+      "categories": {
+        "primary": "coding",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI pair programmer integrated in editors and GitHub.",
+        "fr": "Assistant de programmation intégré aux éditeurs et à GitHub."
+      },
+      "urls": {
+        "product": "https://github.com/features/copilot",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://github.com/features/copilot",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": null,
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "provider": "Anthropic",
+      "aliases": [],
+      "categories": {
+        "primary": "coding",
+        "secondary": []
+      },
+      "description": {
+        "en": "Agentic coding tool from Anthropic.",
+        "fr": "Outil de programmation agentique d'Anthropic."
+      },
+      "urls": {
+        "product": "https://claude.com/product/claude-code",
+        "docs": "https://code.claude.com/docs/en/overview",
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://claude.com/product/claude-code",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=32&h=32",
+        "file": null
+      },
+      "notes": {
+        "en": "anthropic.com/claude-code now redirects to claude.com/product/claude-code.",
+        "fr": "anthropic.com/claude-code redirige désormais vers claude.com/product/claude-code."
+      }
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "provider": "Aider-AI",
+      "aliases": [],
+      "categories": {
+        "primary": "coding",
+        "secondary": []
+      },
+      "description": {
+        "en": "Terminal-based AI pair programming tool.",
+        "fr": "Outil de programmation assistée par IA en terminal."
+      },
+      "urls": {
+        "product": "https://aider.chat",
+        "docs": "https://aider.chat/docs/",
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://aider.chat/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": false
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": null,
+        "file": null
+      },
+      "notes": {
+        "en": "The page does not name a company. The provider field is not confirmed.",
+        "fr": "La page ne nomme aucune société. Le fournisseur n'est pas confirmé."
+      }
+    },
+    {
+      "id": "continue",
+      "name": "Continue",
+      "provider": "Continue (acquired by Cursor, per its site)",
+      "aliases": [],
+      "categories": {
+        "primary": "coding",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI code assistant for developers. Its official site states that Continue has been acquired by Cursor.",
+        "fr": "Assistant de code IA pour développeurs. Son site officiel indique que Continue a été acquis par Cursor."
+      },
+      "urls": {
+        "product": "https://www.continue.dev",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://continue.dev/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://continue.dev/favicon.png",
+        "file": null
+      },
+      "notes": {
+        "en": "The official site title reads “Continue (acquired by Cursor)”. Check current availability before relying on it.",
+        "fr": "Le titre du site officiel indique « Continue (acquired by Cursor) ». Vérifiez la disponibilité actuelle avant de vous y fier."
+      }
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "provider": "Perplexity AI",
+      "aliases": [],
+      "categories": {
+        "primary": "research",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI-powered answer and search engine.",
+        "fr": "Moteur de réponses et de recherche propulsé par l'IA."
+      },
+      "urls": {
+        "product": "https://www.perplexity.ai",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://www.perplexity.ai/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://www.perplexity.ai/favicon.svg",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "notebooklm",
+      "name": "Gemini Notebook (NotebookLM)",
+      "provider": "Google",
+      "aliases": [
+        "NotebookLM"
+      ],
+      "categories": {
+        "primary": "research",
+        "secondary": []
+      },
+      "description": {
+        "en": "Google's source-grounded research tool and thinking partner; the official site brands it Gemini Notebook.",
+        "fr": "Outil de recherche de Google basé sur vos sources ; le site officiel le nomme Gemini Notebook."
+      },
+      "urls": {
+        "product": "https://notebook.google",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://notebook.google/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://notebook.google/_/static/branding/v6/light_mode/favicon/favicon.svg",
+        "file": null
+      },
+      "notes": {
+        "en": "notebooklm.google now redirects to notebook.google, where the product is called “Gemini Notebook”.",
+        "fr": "notebooklm.google redirige désormais vers notebook.google, où le produit s'appelle « Gemini Notebook »."
+      }
+    },
+    {
+      "id": "elicit",
+      "name": "Elicit",
+      "provider": "Elicit",
+      "aliases": [],
+      "categories": {
+        "primary": "research",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI assistant for academic literature review.",
+        "fr": "Assistant IA pour la revue de littérature académique."
+      },
+      "urls": {
+        "product": "https://elicit.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://elicit.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://framerusercontent.com/images/GBpaTmhagvahuZIt8uDryBpioi4.png",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "consensus",
+      "name": "Consensus",
+      "provider": "Consensus",
+      "aliases": [],
+      "categories": {
+        "primary": "research",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI search engine for scientific papers.",
+        "fr": "Moteur de recherche IA pour articles scientifiques."
+      },
+      "urls": {
+        "product": "https://consensus.app",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://consensus.app/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": false
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://consensus.app/favicon.ico",
+        "file": null
+      },
+      "notes": {
+        "en": "The page does not name a company. The provider field is not confirmed.",
+        "fr": "La page ne nomme aucune société. Le fournisseur n'est pas confirmé."
+      }
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "provider": "Midjourney",
+      "aliases": [],
+      "categories": {
+        "primary": "image",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI image generation service.",
+        "fr": "Service de génération d'images par IA."
+      },
+      "urls": {
+        "product": "https://www.midjourney.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://www.midjourney.com/home",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://www.midjourney.com/favicon.ico",
+        "file": null
+      },
+      "notes": {
+        "en": "midjourney.com redirects to /home.",
+        "fr": "midjourney.com redirige vers /home."
+      }
+    },
+    {
+      "id": "adobe-firefly",
+      "name": "Adobe Firefly",
+      "provider": "Adobe",
+      "aliases": [],
+      "categories": {
+        "primary": "image",
+        "secondary": []
+      },
+      "description": {
+        "en": "Adobe's generative AI for images and design.",
+        "fr": "IA générative d'Adobe pour l'image et le design."
+      },
+      "urls": {
+        "product": "https://firefly.adobe.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://firefly.adobe.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://firefly.adobe.com/releases/2e8344b68ceb53cc23f8ba6d9bf54708c371ad69/assets/fi_favicon-B5cV7Wia.ico",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "ideogram",
+      "name": "Ideogram",
+      "provider": "Ideogram",
+      "aliases": [],
+      "categories": {
+        "primary": "image",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI image generator.",
+        "fr": "Générateur d'images par IA."
+      },
+      "urls": {
+        "product": "https://ideogram.ai",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://ideogram.ai/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://ideogram.ai/favicon.ico",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "stability-ai",
+      "name": "Stability AI",
+      "provider": "Stability AI",
+      "aliases": [],
+      "categories": {
+        "primary": "image",
+        "secondary": []
+      },
+      "description": {
+        "en": "Generative AI models and tools for media.",
+        "fr": "Modèles et outils d'IA générative pour les médias."
+      },
+      "urls": {
+        "product": "https://stability.ai",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://stability.ai/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/favicon.ico?format=100w",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "provider": "Runway",
+      "aliases": [],
+      "categories": {
+        "primary": "video",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI video generation and editing tools.",
+        "fr": "Outils de génération et d'édition vidéo par IA."
+      },
+      "urls": {
+        "product": "https://runwayml.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://runway.com/campaign/speed-to-value",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://runway.com/icon.png?icon.35ps9bmugbe1e.png",
+        "file": null
+      },
+      "notes": {
+        "en": "runwayml.com now redirects to runway.com.",
+        "fr": "runwayml.com redirige désormais vers runway.com."
+      }
+    },
+    {
+      "id": "pika",
+      "name": "Pika",
+      "provider": "Pika",
+      "aliases": [],
+      "categories": {
+        "primary": "video",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI video generation platform.",
+        "fr": "Plateforme de génération vidéo par IA."
+      },
+      "urls": {
+        "product": "https://pika.art",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://pika.art/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://pika.art/favicon.ico?favicon.03qzqgaru0by8.ico",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "luma-dream-machine",
+      "name": "Dream Machine",
+      "provider": "Luma AI",
+      "aliases": [],
+      "categories": {
+        "primary": "video",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI video generation from Luma AI.",
+        "fr": "Génération vidéo par IA de Luma AI."
+      },
+      "urls": {
+        "product": "https://lumalabs.ai/dream-machine",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://lumalabs.ai/app",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://lumalabs.ai/favicons/favicon-black.ico",
+        "file": null
+      },
+      "notes": {
+        "en": "lumalabs.ai/dream-machine redirects to lumalabs.ai/app, where the page is titled “Luma”. The product name may have changed.",
+        "fr": "lumalabs.ai/dream-machine redirige vers lumalabs.ai/app, dont le titre est « Luma ». Le nom du produit a peut-être changé."
+      }
+    },
+    {
+      "id": "heygen",
+      "name": "HeyGen",
+      "provider": "HeyGen",
+      "aliases": [],
+      "categories": {
+        "primary": "video",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI avatar video creation platform.",
+        "fr": "Plateforme de création de vidéos avec avatars IA."
+      },
+      "urls": {
+        "product": "https://www.heygen.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://www.heygen.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://www.heygen.com/favicon.ico?favicon.2m321y0geyyfh.ico",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "provider": "Synthesia",
+      "aliases": [],
+      "categories": {
+        "primary": "video",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI avatar video platform for business content.",
+        "fr": "Plateforme de vidéos avec avatars IA pour le contenu professionnel."
+      },
+      "urls": {
+        "product": "https://www.synthesia.io",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://www.synthesia.io/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://cdn.prod.website-files.com/65e89895c5a4b8d764c0d710/664f0f482fa5a4d527d892bc_Favicon-Web-Security%201.png",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "provider": "ElevenLabs",
+      "aliases": [],
+      "categories": {
+        "primary": "audio",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI voice and speech generation platform.",
+        "fr": "Plateforme de génération de voix et de parole par IA."
+      },
+      "urls": {
+        "product": "https://elevenlabs.io",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://elevenlabs.io/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://elevenlabs.io/favicon.ico?9c55860cee08706b",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "suno",
+      "name": "Suno",
+      "provider": "Suno",
+      "aliases": [],
+      "categories": {
+        "primary": "audio",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI music generation service.",
+        "fr": "Service de génération de musique par IA."
+      },
+      "urls": {
+        "product": "https://suno.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://suno.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://cdn-o.suno.com/favicon.ico",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "udio",
+      "name": "Udio",
+      "provider": "Udio",
+      "aliases": [],
+      "categories": {
+        "primary": "audio",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI music generation service.",
+        "fr": "Service de génération de musique par IA."
+      },
+      "urls": {
+        "product": "https://www.udio.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://www.udio.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://www.udio.com/favicon.ico?favicon.0wbc3vz33genq.ico",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "whisper",
+      "name": "Whisper",
+      "provider": "OpenAI",
+      "aliases": [],
+      "categories": {
+        "primary": "audio",
+        "secondary": []
+      },
+      "description": {
+        "en": "Speech recognition model (source repository).",
+        "fr": "Modèle de reconnaissance vocale (dépôt source)."
+      },
+      "urls": {
+        "product": "https://github.com/openai/whisper",
+        "docs": null,
+        "repository": "https://github.com/openai/whisper",
+        "pricing": null
+      },
+      "access": "open_source",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": true,
+        "license": "MIT"
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://github.com/openai/whisper",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official repository exists and shows the MIT license. Models, hardware needs and usage terms of any hosted service are not verified.",
+        "fr": "Vérifié : le dépôt officiel existe et affiche la licence MIT. Modèles, besoins matériels et conditions d'un service hébergé non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": null,
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "gamma",
+      "name": "Gamma",
+      "provider": "Gamma Tech, Inc.",
+      "aliases": [],
+      "categories": {
+        "primary": "writing",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI tool for presentations and documents.",
+        "fr": "Outil IA pour présentations et documents."
+      },
+      "urls": {
+        "product": "https://gamma.app",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://gamma.app/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://static.gamma.app/favicons/favicon_light.ico",
+        "file": null
+      },
+      "notes": {
+        "en": "The page names the company as Gamma Tech, Inc.",
+        "fr": "La page nomme la société Gamma Tech, Inc."
+      }
+    },
+    {
+      "id": "meshy",
+      "name": "Meshy",
+      "provider": "Meshy",
+      "aliases": [],
+      "categories": {
+        "primary": "3d",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI 3D model generation.",
+        "fr": "Génération de modèles 3D par IA."
+      },
+      "urls": {
+        "product": "https://www.meshy.ai",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://www.meshy.ai/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://www.meshy.ai/favicon.ico?favicon.1yyl_oveqrzpy.ico",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "n8n",
+      "name": "n8n",
+      "provider": "n8n",
+      "aliases": [],
+      "categories": {
+        "primary": "agents",
+        "secondary": []
+      },
+      "description": {
+        "en": "Workflow automation platform with AI features.",
+        "fr": "Plateforme d'automatisation avec fonctions IA."
+      },
+      "urls": {
+        "product": "https://n8n.io",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://n8n.io/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": null,
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "langchain",
+      "name": "LangChain",
+      "provider": "LangChain",
+      "aliases": [],
+      "categories": {
+        "primary": "agents",
+        "secondary": []
+      },
+      "description": {
+        "en": "Framework and platform for building LLM applications and agents.",
+        "fr": "Framework et plateforme pour créer des applications et agents LLM."
+      },
+      "urls": {
+        "product": "https://www.langchain.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://www.langchain.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a17e4a429d54e956e2a763_favicon.png",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "provider": "Ollama",
+      "aliases": [],
+      "categories": {
+        "primary": "open-models",
+        "secondary": []
+      },
+      "description": {
+        "en": "Tool for running language models locally.",
+        "fr": "Outil pour exécuter des modèles de langage en local."
+      },
+      "urls": {
+        "product": "https://ollama.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://ollama.com/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://ollama.com/public/icon-16x16.png",
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "hugging-face",
+      "name": "Hugging Face",
+      "provider": "Hugging Face",
+      "aliases": [],
+      "categories": {
+        "primary": "open-models",
+        "secondary": []
+      },
+      "description": {
+        "en": "Hub for models, datasets and demos.",
+        "fr": "Plateforme de modèles, jeux de données et démos."
+      },
+      "urls": {
+        "product": "https://huggingface.co",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://huggingface.co/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": null,
+        "file": null
+      },
+      "notes": null
+    },
+    {
+      "id": "lm-studio",
+      "name": "LM Studio",
+      "provider": "LM Studio",
+      "aliases": [],
+      "categories": {
+        "primary": "open-models",
+        "secondary": []
+      },
+      "description": {
+        "en": "Desktop app for running local language models.",
+        "fr": "Application de bureau pour exécuter des modèles locaux."
+      },
+      "urls": {
+        "product": "https://lmstudio.ai",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://lmstudio.ai/",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": null,
+      "icon": {
+        "sourceUrl": "https://lmstudio.ai/assets/marketing/logo-192x192.png",
+        "file": null
+      },
+      "notes": {
+        "en": "The official home page now highlights “LM Studio Bionic”, an agent for work and code.",
+        "fr": "La page d'accueil officielle met en avant « LM Studio Bionic », un agent pour le travail et le code."
+      }
+    },
+    {
+      "id": "deepl",
+      "name": "DeepL",
+      "provider": "DeepL",
+      "aliases": [],
+      "categories": {
+        "primary": "translation",
+        "secondary": []
+      },
+      "description": {
+        "en": "AI translation and writing assistant.",
+        "fr": "Traduction et assistance à la rédaction par IA."
+      },
+      "urls": {
+        "product": "https://www.deepl.com",
+        "docs": null,
+        "repository": null,
+        "pricing": null
+      },
+      "access": "unknown",
+      "platforms": null,
+      "version": null,
+      "api": null,
+      "openSource": {
+        "isOpenSource": null,
+        "license": null
+      },
+      "verification": {
+        "status": "verified",
+        "lastVerified": "2026-10-18",
+        "evidenceUrl": "https://www.deepl.com/en",
+        "method": "Official page opened through Firecrawl (cached copy dated 2026-10-16 to 2026-10-18). HTTP 200; the page names the product.",
+        "providerConfirmedOnPage": true
+      },
+      "discovery": {
+        "source": "Seed list compiled by the maintainer assistant, then checked against the official page on 2026-10-18.",
+        "date": "2026-10-15"
+      },
+      "limitations": {
+        "en": "Verified: the official page exists and names the product. Pricing details, access model, API availability and features are not verified.",
+        "fr": "Vérifié : la page officielle existe et nomme le produit. Détails tarifaires, modèle d'accès, API et fonctions non vérifiés."
+      },
+      "freeOfferMentioned": true,
+      "icon": {
+        "sourceUrl": "https://www.deepl.com/favicon.ico?favicon.2q65ixsfts1dv.ico",
+        "file": null
+      },
+      "notes": null
+    }
+  ]
+}

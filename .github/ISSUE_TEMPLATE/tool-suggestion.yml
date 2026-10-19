@@ -1,0 +1,19 @@
+name: Suggest or correct a tool
+description: Propose a new AI tool or fix an entry
+labels: [data]
+body:
+  - type: input
+    id: name
+    attributes: { label: Tool name }
+    validations: { required: true }
+  - type: input
+    id: url
+    attributes: { label: Official product URL (https) }
+    validations: { required: true }
+  - type: input
+    id: provider
+    attributes: { label: Provider / organization }
+  - type: textarea
+    id: evidence
+    attributes: { label: Source for each claim, description: Official pages or documentation. Do not paste secrets or personal data. }
+    validations: { required: true }

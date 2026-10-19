@@ -1,0 +1,17 @@
+{
+  "name": "lust-dev-ai-ranking-hub",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LUST DEV AI RANKING HUB — bilingual, source-backed AI tools directory.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "validate": "node scripts/validate-data.mjs",
+    "test": "node --test",
+    "build": "node scripts/build.mjs",
+    "fetch-icons": "node scripts/fetch-icons.mjs",
+    "check-links": "node scripts/check-links.mjs --out link-report.json",
+    "start": "node scripts/build.mjs && node scripts/serve.mjs"
+  },
+  "license": "MIT"
+}

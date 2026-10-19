@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "assistants",
+      "name": {
+        "en": "General assistants",
+        "fr": "Assistants généralistes"
+      },
+      "description": {
+        "en": "Chat assistants and reasoning models.",
+        "fr": "Assistants conversationnels et modèles de raisonnement."
+      }
+    },
+    {
+      "id": "coding",
+      "name": {
+        "en": "Coding",
+        "fr": "Code"
+      },
+      "description": {
+        "en": "Code assistants, AI editors and coding agents.",
+        "fr": "Assistants de code, éditeurs IA et agents de programmation."
+      }
+    },
+    {
+      "id": "research",
+      "name": {
+        "en": "Research & search",
+        "fr": "Recherche"
+      },
+      "description": {
+        "en": "AI search and research assistants.",
+        "fr": "Moteurs de recherche IA et assistants de recherche."
+      }
+    },
+    {
+      "id": "image",
+      "name": {
+        "en": "Image",
+        "fr": "Image"
+      },
+      "description": {
+        "en": "Image generation, editing and design.",
+        "fr": "Génération, édition d'images et design."
+      }
+    },
+    {
+      "id": "video",
+      "name": {
+        "en": "Video & avatars",
+        "fr": "Vidéo et avatars"
+      },
+      "description": {
+        "en": "Video generation, editing and avatars.",
+        "fr": "Génération et édition vidéo, avatars."
+      }
+    },
+    {
+      "id": "audio",
+      "name": {
+        "en": "Audio & music",
+        "fr": "Audio et musique"
+      },
+      "description": {
+        "en": "Speech, music and transcription.",
+        "fr": "Voix, musique et transcription."
+      }
+    },
+    {
+      "id": "writing",
+      "name": {
+        "en": "Writing & productivity",
+        "fr": "Écriture et productivité"
+      },
+      "description": {
+        "en": "Writing, documents and presentations.",
+        "fr": "Écriture, documents et présentations."
+      }
+    },
+    {
+      "id": "3d",
+      "name": {
+        "en": "3D",
+        "fr": "3D"
+      },
+      "description": {
+        "en": "3D generation, CAD and spatial design.",
+        "fr": "Génération 3D, CAO et design spatial."
+      }
+    },
+    {
+      "id": "agents",
+      "name": {
+        "en": "Agents & automation",
+        "fr": "Agents et automatisation"
+      },
+      "description": {
+        "en": "AI agents and workflow automation.",
+        "fr": "Agents IA et automatisation de flux."
+      }
+    },
+    {
+      "id": "open-models",
+      "name": {
+        "en": "Open models & local",
+        "fr": "Modèles ouverts et local"
+      },
+      "description": {
+        "en": "Local inference and model hosting.",
+        "fr": "Inférence locale et hébergement de modèles."
+      }
+    },
+    {
+      "id": "translation",
+      "name": {
+        "en": "Translation & education",
+        "fr": "Traduction et éducation"
+      },
+      "description": {
+        "en": "Translation and language learning.",
+        "fr": "Traduction et apprentissage des langues."
+      }
+    },
+    {
+      "id": "business",
+      "name": {
+        "en": "Business & analytics",
+        "fr": "Entreprise et analyse"
+      },
+      "description": {
+        "en": "Analytics, finance and customer support.",
+        "fr": "Analyse, finance et support client."
+      }
+    },
+    {
+      "id": "science",
+      "name": {
+        "en": "Science, health & accessibility",
+        "fr": "Science, santé et accessibilité"
+      },
+      "description": {
+        "en": "Science, healthcare and accessibility.",
+        "fr": "Science, santé et accessibilité."
+      }
+    }
+  ]
+}

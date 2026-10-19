@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "benchmarks": [
+    {
+      "id": "arena-text",
+      "categoryId": "assistants",
+      "basis": "public_benchmark",
+      "title": "Text Arena, overall",
+      "source": {
+        "name": "Arena (formerly LMArena / Chatbot Arena)",
+        "url": "https://lmarena.ai/leaderboard/text",
+        "finalUrl": "https://arena.ai/leaderboard/chat/text"
+      },
+      "metric": "Arena score (human preference votes, with ± uncertainty)",
+      "boardUpdated": "2026-10-15",
+      "retrieved": "2026-10-18",
+      "retrievedVia": "Firecrawl (cached copy of the public page)",
+      "scope": {
+        "en": "Ranks AI models, not apps. A product is only linked when it is the same provider's assistant.",
+        "fr": "Classe des modèles d'IA, pas des applications. Un produit n'est lié que s'il s'agit de l'assistant du même fournisseur."
+      },
+      "omitted": null,
+      "entries": [
+        {
+          "rank": 1,
+          "model": "Gemini 4 Argon (High)",
+          "organization": "Google",
+          "score": 1524,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": "gemini"
+        },
+        {
+          "rank": 2,
+          "model": "Muse Wonder (Max)",
+          "organization": "Meta",
+          "score": 1509,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 3,
+          "model": "Claude Opus 5.5 (High)",
+          "organization": "Anthropic",
+          "score": 1508,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 4,
+          "model": "Claude Fable 5 (High)",
+          "organization": "Anthropic",
+          "score": 1504,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 5,
+          "model": "Claude Opus 4.6 (High)",
+          "organization": "Anthropic",
+          "score": 1503,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 6,
+          "model": "Claude Fable 5.1 (Max)",
+          "organization": "Anthropic",
+          "score": 1502,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 7,
+          "model": "Claude Opus 4.7 (High)",
+          "organization": "Anthropic",
+          "score": 1501,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 8,
+          "model": "Claude Opus 4.6",
+          "organization": "Anthropic",
+          "score": 1497,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 9,
+          "model": "Gemini 3.8 Flash (High)",
+          "organization": "Google",
+          "score": 1496,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": "gemini"
+        },
+        {
+          "rank": 10,
+          "model": "Muse Spark 1.3 (Max)",
+          "organization": "Meta",
+          "score": 1494,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        }
+      ]
+    },
+    {
+      "id": "arena-text-to-image",
+      "categoryId": "image",
+      "basis": "public_benchmark",
+      "title": "Text-to-Image Arena, overall",
+      "source": {
+        "name": "Arena (formerly LMArena / Chatbot Arena)",
+        "url": "https://arena.ai/leaderboard/text-to-image",
+        "finalUrl": "https://arena.ai/leaderboard/image/text-to-image"
+      },
+      "metric": "Arena score (human preference votes, with ± uncertainty)",
+      "boardUpdated": "2026-10-07",
+      "retrieved": "2026-10-18",
+      "retrievedVia": "Firecrawl (cached copy of the public page)",
+      "scope": {
+        "en": "Ranks AI models, not apps. A product is only linked when it is the same provider's assistant.",
+        "fr": "Classe des modèles d'IA, pas des applications. Un produit n'est lié que s'il s'agit de l'assistant du même fournisseur."
+      },
+      "omitted": "Rank 9 is omitted: the retrieved copy was not legible for that row.",
+      "entries": [
+        {
+          "rank": 1,
+          "model": "GPT-Image-2.5 Sunburst",
+          "organization": "OpenAI",
+          "score": 1425,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 2,
+          "model": "GPT-Image-2.5 Flare",
+          "organization": "OpenAI",
+          "score": 1398,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 3,
+          "model": "GPT-Image-2 (Medium)",
+          "organization": "OpenAI",
+          "score": 1383,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 4,
+          "model": "Grok Imagine Image 2.0",
+          "organization": "SpaceXAI",
+          "score": 1334,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 5,
+          "model": "MAI-Image-2.6",
+          "organization": "Microsoft AI",
+          "score": 1332,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 6,
+          "model": "Gemini Nano Banana 2.1",
+          "organization": "Google",
+          "score": 1328,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 7,
+          "model": "Reve 2.1",
+          "organization": "Reve",
+          "score": 1302,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 8,
+          "model": "Grok Imagine Image 2.0 (20260801)",
+          "organization": "SpaceXAI",
+          "score": 1294,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 10,
+          "model": "Reve 2.0",
+          "organization": "Reve",
+          "score": 1269,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        }
+      ]
+    },
+    {
+      "id": "arena-text-to-video",
+      "categoryId": "video",
+      "basis": "public_benchmark",
+      "title": "Text-to-Video Arena",
+      "source": {
+        "name": "Arena (formerly LMArena / Chatbot Arena)",
+        "url": "https://arena.ai/leaderboard/text-to-video",
+        "finalUrl": "https://arena.ai/leaderboard/video/text-to-video"
+      },
+      "metric": "Arena score (human preference votes, with ± uncertainty)",
+      "boardUpdated": "2026-09-21",
+      "retrieved": "2026-10-18",
+      "retrievedVia": "Firecrawl (cached copy of the public page)",
+      "scope": {
+        "en": "Ranks AI models, not apps. A product is only linked when it is the same provider's assistant.",
+        "fr": "Classe des modèles d'IA, pas des applications. Un produit n'est lié que s'il s'agit de l'assistant du même fournisseur."
+      },
+      "omitted": null,
+      "entries": [
+        {
+          "rank": 1,
+          "model": "Gemini Omni 1.1 Flash",
+          "organization": "Google",
+          "score": 1516,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 2,
+          "model": "gemini-omni-flash",
+          "organization": "Google",
+          "score": 1513,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 3,
+          "model": "FLUX 3 Video",
+          "organization": "Black Forest Labs",
+          "score": 1493,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 4,
+          "model": "Grok Imagine Video 1.5",
+          "organization": "SpaceXAI",
+          "score": 1492,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 5,
+          "model": "Dreamina Seedance 2.0 (720p)",
+          "organization": "Bytedance",
+          "score": 1479,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 6,
+          "model": "Wan 3.0",
+          "organization": "Alibaba",
+          "score": 1476,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 7,
+          "model": "Dreamina Seedance 2.5 (720p)",
+          "organization": "Bytedance",
+          "score": 1474,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 8,
+          "model": "MiniMax H3",
+          "organization": "MiniMax",
+          "score": 1460,
+          "preliminary": false,
+          "license": "MiniMax H3 community license agreement",
+          "relatedToolId": null
+        },
+        {
+          "rank": 9,
+          "model": "Muse Video",
+          "organization": "Meta",
+          "score": 1456,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 10,
+          "model": "HappyHorse 1.0",
+          "organization": "Alibaba-ATH",
+          "score": 1427,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        }
+      ]
+    }
+  ]
+}
