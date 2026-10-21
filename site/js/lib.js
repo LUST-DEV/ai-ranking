@@ -127,10 +127,11 @@ export function searchTools(tools, query, lang = "en") {
   });
 }
 
-export function filterTools(tools, { category = "", access = "", query = "", lang = "en" } = {}) {
+export function filterTools(tools, { category = "", access = "", free = false, query = "", lang = "en" } = {}) {
   let out = searchTools(tools, query, lang);
   if (category) out = out.filter((t) => t.categories.primary === category || t.categories.secondary.includes(category));
   if (access) out = out.filter((t) => t.access === access);
+  if (free) out = out.filter((t) => t.freeOfferMentioned === true);
   return out;
 }
 
@@ -162,4 +163,9 @@ export function computeStats(tools, categories, evaluations) {
     evaluated: tools.filter((t) => evaluated.has(t.id)).length,
     verified: tools.filter((t) => t.verification.status === "verified").length,
   };
+}
+
+/** First n rows of a public benchmark board (rows are stored in rank order). */
+export function topEntries(board, n = 3) {
+  return (board?.entries ?? []).slice(0, Math.max(0, n));
 }

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { computeScore, validateCriteria, publishProblems, isPublishable, rankingFor, filterTools, sortTools, paginate, searchTools, normalize, isSafeHttpUrl, canonicalUrl, computeStats, MAX_SCORE } from "../site/js/lib.js";
+import { computeScore, validateCriteria, publishProblems, isPublishable, rankingFor, filterTools, sortTools, paginate, searchTools, normalize, isSafeHttpUrl, canonicalUrl, computeStats, topEntries, MAX_SCORE } from "../site/js/lib.js";
 
 const tool = (id, name, cat, extra = {}) => ({ id, name, provider: "P" + id, aliases: [], categories: { primary: cat, secondary: [] }, access: "unknown", description: { en: `${name} desc`, fr: `${name} déscription` }, verification: { status: "pending_review" }, ...extra });
 const goodEval = (toolId, c, over = {}) => {
@@ -72,4 +72,14 @@ test("stats are computed from data only", () => {
   const tools = [tool("a", "A", "coding"), tool("b", "B", "image", { verification: { status: "verified" } })];
   const s = computeStats(tools, [{ id: "coding" }, { id: "image" }, { id: "audio" }], [goodEval("a")]);
   assert.deepEqual(s, { tools: 2, categories: 3, categoriesWithTools: 2, evaluated: 1, verified: 1 });
+});
+
+test("free-offer filter and topEntries", () => {
+  const tools = [tool("a", "A", "coding", { freeOfferMentioned: true }), tool("b", "B", "coding", { freeOfferMentioned: null })];
+  assert.deepEqual(filterTools(tools, { free: true }).map((t) => t.id), ["a"]);
+  assert.equal(filterTools(tools, { free: false }).length, 2);
+  const board = { entries: [{ rank: 1 }, { rank: 2 }, { rank: 3 }, { rank: 4 }] };
+  assert.equal(topEntries(board, 3).length, 3);
+  assert.equal(topEntries(undefined, 3).length, 0);
+  assert.equal(topEntries(board, -1).length, 0);
 });

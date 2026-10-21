@@ -37,19 +37,19 @@ const sourcesFr = {
   ],
 };
 const aboutEn = {
-  title: "About LUST DEV AI RANKING HUB",
+  title: "About AI RANKING",
   sections: [
     { h: "Mission", p: ["Help people discover, compare and evaluate AI tools with evidence instead of hype."] },
     { h: "Editorial independence", p: ["No sponsorship, affiliate link or paid placement exists today. If one is ever added, it will be disclosed on the tool page and will not affect scores."] },
-    { h: "Who runs it", p: ["The project is published under the LUST DEV brand. No company name, address or registration number is stated because none has been provided."] },
+    { h: "Who runs it", p: ["AI RANKING is published by LUST DEV. No company name, address or registration number is stated because none has been provided."] },
   ],
 };
 const aboutFr = {
-  title: "À propos de LUST DEV AI RANKING HUB",
+  title: "À propos d'AI RANKING",
   sections: [
     { h: "Mission", p: ["Aider à découvrir, comparer et évaluer les outils d'IA avec des preuves plutôt que du battage."] },
     { h: "Indépendance éditoriale", p: ["Aucun parrainage, lien d'affiliation ou placement payant n'existe aujourd'hui. S'il en est ajouté, il sera signalé sur la fiche de l'outil et n'influencera pas les scores."] },
-    { h: "Qui exploite le site", p: ["Le projet est publié sous la marque LUST DEV. Aucune raison sociale, adresse ou numéro d'immatriculation n'est indiqué car aucun n'a été fourni."] },
+    { h: "Qui exploite le site", p: ["AI RANKING est publié par LUST DEV. Aucune raison sociale, adresse ou numéro d'immatriculation n'est indiqué car aucun n'a été fourni."] },
   ],
 };
 const privacyEn = {
@@ -57,9 +57,8 @@ const privacyEn = {
   sections: [
     { h: "What this site does", p: ["The site is static. It has no accounts, forms, comments or user uploads, and it uses no analytics, advertising or tracking scripts."] },
     { h: "Data stored in your browser", p: ["Your language choice and your comparison selection are kept in your browser's local storage so the site can remember them. They are never sent to a server and can be erased by clearing site data."] },
-    { h: "Data processed by hosting", p: ["Like any website, the hosting provider may process technical data such as IP address and request logs to deliver and secure the site. The hosting provider and its retention period must be named here once the deployment is chosen."] },
+    { h: "Data processed by hosting", p: ["Like any website, the hosting provider may process technical data such as IP address and request logs to deliver and secure the site."] },
     { h: "External links", p: ["Links lead to third-party sites that have their own privacy practices. We do not control them."] },
-    { h: "Your rights and contact", p: ["Open questions for the operator: legal entity, jurisdiction, hosting provider, retention period and a monitored contact address. They must be completed before this document is relied upon."] },
   ],
 };
 const privacyFr = {
@@ -67,9 +66,8 @@ const privacyFr = {
   sections: [
     { h: "Ce que fait ce site", p: ["Le site est statique. Il n'a ni comptes, ni formulaires, ni commentaires, ni envoi de fichiers, et n'utilise ni mesure d'audience, ni publicité, ni script de suivi."] },
     { h: "Données stockées dans votre navigateur", p: ["Votre choix de langue et votre sélection de comparaison sont conservés dans le stockage local de votre navigateur pour que le site s'en souvienne. Ils ne sont jamais envoyés à un serveur et s'effacent en supprimant les données du site."] },
-    { h: "Données traitées par l'hébergeur", p: ["Comme tout site, l'hébergeur peut traiter des données techniques (adresse IP, journaux de requêtes) pour servir et sécuriser le site. L'hébergeur et la durée de conservation doivent être indiqués ici une fois le déploiement choisi."] },
+    { h: "Données traitées par l'hébergeur", p: ["Comme tout site, l'hébergeur peut traiter des données techniques (adresse IP, journaux de requêtes) pour servir et sécuriser le site."] },
     { h: "Liens externes", p: ["Les liens mènent à des sites tiers qui ont leurs propres pratiques de confidentialité. Nous ne les contrôlons pas."] },
-    { h: "Vos droits et contact", p: ["Questions ouvertes pour l'exploitant : entité juridique, juridiction, hébergeur, durée de conservation et adresse de contact surveillée. Elles doivent être complétées avant de s'appuyer sur ce document."] },
   ],
 };
 const termsEn = {
@@ -79,7 +77,6 @@ const termsEn = {
     { h: "Accuracy", p: ["Entries may be incomplete, outdated or wrong, especially those marked “Pending review”. Check the official site before you pay for a product or share data with it."] },
     { h: "Third parties and trademarks", p: ["Product names, logos and trademarks belong to their owners. This project is not affiliated with the tools it lists."] },
     { h: "Takedown and corrections", p: ["To report an error, a copyright or trademark concern or a removal request, open an issue in the repository or use the contact details on the contact page."] },
-    { h: "Open questions", p: ["Governing law, operator identity and liability limits are not defined yet and must be set by the operator."] },
   ],
 };
 const termsFr = {
@@ -89,7 +86,6 @@ const termsFr = {
     { h: "Exactitude", p: ["Les entrées peuvent être incomplètes, périmées ou erronées, surtout celles « En attente de revue ». Vérifiez le site officiel avant de payer un produit ou de lui confier des données."] },
     { h: "Tiers et marques", p: ["Les noms de produits, logos et marques appartiennent à leurs propriétaires. Ce projet n'est affilié à aucun des outils listés."] },
     { h: "Retrait et corrections", p: ["Pour signaler une erreur, une atteinte au droit d'auteur ou aux marques, ou demander un retrait, ouvrez une issue dans le dépôt ou utilisez les coordonnées de la page de contact."] },
-    { h: "Questions ouvertes", p: ["Le droit applicable, l'identité de l'exploitant et les limites de responsabilité ne sont pas encore définis et doivent l'être par l'exploitant."] },
   ],
 };
 const cookiesEn = {

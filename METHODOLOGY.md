@@ -1,4 +1,4 @@
-# Methodology / Méthodologie
+# AI RANKING: Methodology / Méthodologie
 
 **Status:** no tool has been scored. This is a proposed method, not a claim that any product was tested.
 

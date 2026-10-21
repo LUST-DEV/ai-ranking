@@ -1,8 +1,8 @@
 {
-  "name": "lust-dev-ai-ranking-hub",
-  "version": "0.1.0",
+  "name": "ai-ranking",
+  "version": "0.3.0",
   "private": true,
-  "description": "LUST DEV AI RANKING HUB — bilingual, source-backed AI tools directory.",
+  "description": "AI RANKING — bilingual, source-backed AI tools directory.",
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {

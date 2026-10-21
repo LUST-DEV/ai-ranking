@@ -29,7 +29,7 @@ test("legal pages invent no company data", () => {
 });
 test("HTML basics: lang, viewport, skip link, main landmark, labelled controls", async () => {
   const html = await read("site/index.html");
-  assert.match(html, /<html lang="en">/);
+  assert.match(html, /<html lang="en"/);
   assert.match(html, /name="viewport"/);
   assert.match(html, /class="skip"/);
   assert.match(html, /<main id="app"/);
@@ -37,10 +37,26 @@ test("HTML basics: lang, viewport, skip link, main landmark, labelled controls",
   assert.doesNotMatch(html, /<script(?![^>]*\bsrc=)/i, "no inline scripts (CSP)");
   assert.doesNotMatch(html, /\sstyle=/i, "no inline styles (CSP)");
 });
-test("CSS honours reduced motion and visible focus", async () => {
+test("CSS honours reduced motion, visible focus, both themes and a glass fallback", async () => {
   const css = await read("site/css/styles.css");
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(css, /:focus-visible/);
+  assert.match(css, /data-theme="light"/);
+  assert.match(css, /data-theme="dark"/);
+  assert.match(css, /@supports not/);
+  assert.match(css, /backdrop-filter/);
+});
+test("theme switch is an accessible button and its script runs from a file (CSP)", async () => {
+  const html = await read("site/index.html");
+  assert.match(html, /<button id="theme"[^>]*role="switch"[^>]*aria-checked/);
+  assert.match(html, /<script src="js\/theme\.js"><\/script>/);
+  const js = await read("site/js/theme.js");
+  assert.match(js, /prefers-color-scheme: light/);
+});
+test("brand is AI RANKING with the Lust Dev footer line", async () => {
+  assert.equal(STRINGS.en.brand, "AI RANKING"); assert.equal(STRINGS.fr.brand, "AI RANKING");
+  assert.equal(STRINGS.en.powered, "⚡ Powered By Lust Dev ⚡");
+  assert.match(await read("site/index.html"), /<title>AI RANKING/);
 });
 test("app never injects data as HTML and has no third-party requests", async () => {
   const dir = new URL("../site/js/", import.meta.url);
@@ -63,7 +79,28 @@ test("build produces dist with data, robots, and refuses a bad SITE_URL", async 
   assert.equal(ok.status, 0, ok.stderr);
   for (const f of ["dist/index.html", "dist/data/tools.json", "dist/robots.txt", "dist/sitemap.xml"]) assert.ok((await stat(new URL("../" + f, import.meta.url))).isFile(), f);
   assert.match(await read("dist/sitemap.xml"), /https:\/\/example\.org\//);
+  const html = await read("dist/index.html");
+  assert.match(html, /<link rel="canonical" href="https:\/\/example\.org\/">/);
+  assert.match(html, /og:image" content="https:\/\/example\.org\/og\.png"/);
+  assert.match(html, /summary_large_image/);
+  const ld = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+  assert.equal(ld.name, "AI RANKING");
+  const llms = await read("dist/llms.txt");
+  assert.match(llms, /^# AI RANKING/);
+  assert.match(llms, /\[Tools\]\(https:\/\/example\.org\/data\/tools\.json\)/);
+  assert.ok((await stat(new URL("../dist/404.html", import.meta.url))).isFile());
+  assert.match(await read("dist/404.html"), /noindex/);
   const bad = spawnSync("node", ["scripts/build.mjs"], { cwd: new URL("../", import.meta.url), encoding: "utf8", env: { ...process.env, SITE_URL: "javascript:alert(1)" } });
   assert.notEqual(bad.status, 0);
-  spawnSync("node", ["scripts/build.mjs"], { cwd: new URL("../", import.meta.url), env: { ...process.env, SITE_URL: "" } });
+  const plain = spawnSync("node", ["scripts/build.mjs"], { cwd: new URL("../", import.meta.url), encoding: "utf8", env: { ...process.env, SITE_URL: "" } });
+  assert.equal(plain.status, 0, plain.stderr);
+  const noUrl = await read("dist/index.html");
+  assert.doesNotMatch(noUrl, /rel="canonical"|ld\+json|og:image"/, "no absolute metadata without a real SITE_URL");
+  assert.doesNotMatch(await read("dist/robots.txt"), /Sitemap: http/);
+});
+test("no placeholder text ships in the site source", async () => {
+  for (const f of ["site/index.html", "site/js/app.js", "site/js/pages.js", "site/js/i18n.js"]) {
+    const src = await read(f);
+    assert.doesNotMatch(src, /lorem ipsum|TODO|FIXME|placeholder text|coming soon|example\.com/i, f);
+  }
 });

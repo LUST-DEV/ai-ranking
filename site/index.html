@@ -1,35 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LUST DEV AI RANKING HUB</title>
-  <meta name="description" content="A bilingual, source-backed directory of AI tools. Scores are published only after documented, reviewed tests.">
-  <meta name="color-scheme" content="dark">
+  <title>AI RANKING · AI tools directory</title>
+  <meta name="description" content="AI RANKING: an AI tools directory with official links and public model rankings. Our own scores appear only after a reviewed test.">
+  <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0d0b1a">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="LUST DEV AI RANKING HUB">
-  <meta property="og:description" content="Find AI tools and see what has actually been tested.">
+  <meta property="og:title" content="AI RANKING">
+  <meta property="og:description" content="Find the right AI tool and see how leading models rank on public benchmarks.">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
   <script type="module" src="js/app.js"></script>
 </head>
 <body>
   <a id="skip" class="skip" href="#app">Skip to content</a>
-  <div class="bg" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i></div>
   <header class="top">
-    <div class="wrap bar">
-      <a class="brand" href="#/"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18V6l8 6 8-6v12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg><span id="brand-text">LUST DEV AI RANKING HUB</span></a>
+    <div class="wrap bar glass">
+      <a class="brand" href="#/"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18V6l8 6 8-6v12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><span id="brand-text">AI RANKING</span></a>
       <nav id="nav" class="nav" aria-label="Main"></nav>
-      <select id="lang" aria-label="Language"><option value="en">EN</option><option value="fr">FR</option></select>
+      <div class="tools">
+        <button id="theme" class="switch" type="button" role="switch" aria-checked="true" aria-label="Switch to light mode">
+          <svg class="sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3 7 7M17 17l1.7 1.7M5.3 18.7 7 17M17 7l1.7-1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <select id="lang" aria-label="Language"><option value="en">EN</option><option value="fr">FR</option></select>
+      </div>
     </div>
   </header>
   <main id="app" tabindex="-1"></main>
   <footer class="foot">
-    <div class="wrap">
+    <div class="wrap glass foot-card">
       <nav id="footer-links" class="footnav" aria-label="Footer"></nav>
-      <p id="disclaimer" class="muted"></p>
+      <p id="disclaimer" class="muted small"></p>
+      <p id="powered" class="powered"></p>
     </div>
   </footer>
   <div id="live" class="sr-only" aria-live="polite"></div>

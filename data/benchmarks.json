@@ -327,6 +327,230 @@
           "relatedToolId": null
         }
       ]
+    },
+    {
+      "id": "arena-webdev",
+      "categoryId": "coding",
+      "basis": "public_benchmark",
+      "title": "Code Arena: WebDev, overall",
+      "source": {
+        "name": "Arena (formerly LMArena / Chatbot Arena)",
+        "url": "https://arena.ai/leaderboard/webdev",
+        "finalUrl": "https://arena.ai/leaderboard/code/webdev"
+      },
+      "metric": "Arena score (human preference votes, with ± uncertainty)",
+      "boardUpdated": "2026-10-19",
+      "retrieved": "2026-10-20",
+      "retrievedVia": "Firecrawl (public page, copy may be cached)",
+      "scope": {
+        "en": "Ranks AI models, not apps. A product is only linked when it is the same provider's assistant.",
+        "fr": "Classe des modèles d'IA, pas des applications. Un produit n'est lié que s'il s'agit de l'assistant du même fournisseur."
+      },
+      "omitted": null,
+      "entries": [
+        {
+          "rank": 1,
+          "model": "Claude Opus 5.5 (Max)",
+          "organization": "Anthropic",
+          "score": 1807,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 2,
+          "model": "GPT-6 Astra (Max)",
+          "organization": "OpenAI",
+          "score": 1774,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "chatgpt"
+        },
+        {
+          "rank": 3,
+          "model": "Claude Sonnet 5.5 (xHigh)",
+          "organization": "Anthropic",
+          "score": 1768,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 4,
+          "model": "GPT-6.1 Sol (Max)",
+          "organization": "OpenAI",
+          "score": 1753,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "chatgpt"
+        },
+        {
+          "rank": 5,
+          "model": "Claude Fable 5.1 (Max)",
+          "organization": "Anthropic",
+          "score": 1743,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 6,
+          "model": "Muse Wonder Full (Max)",
+          "organization": "Meta",
+          "score": 1726,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 7,
+          "model": "Claude Sonnet 5.5 (High)",
+          "organization": "Anthropic",
+          "score": 1710,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 8,
+          "model": "Claude Opus 5 (Max)",
+          "organization": "Anthropic",
+          "score": 1689,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 9,
+          "model": "GPT-6 Sol (Max)",
+          "organization": "OpenAI",
+          "score": 1683,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "chatgpt"
+        },
+        {
+          "rank": 10,
+          "model": "Gemini 4 Argon (High)",
+          "organization": "Google",
+          "score": 1678,
+          "preliminary": true,
+          "license": "Proprietary",
+          "relatedToolId": "gemini"
+        }
+      ]
+    },
+    {
+      "id": "arena-search",
+      "categoryId": "research",
+      "basis": "public_benchmark",
+      "title": "Search Arena, overall",
+      "source": {
+        "name": "Arena (formerly LMArena / Chatbot Arena)",
+        "url": "https://arena.ai/leaderboard/search",
+        "finalUrl": "https://arena.ai/leaderboard/chat/search"
+      },
+      "metric": "Arena score (human preference votes, with ± uncertainty)",
+      "boardUpdated": "2026-10-13",
+      "retrieved": "2026-10-20",
+      "retrievedVia": "Firecrawl (public page, copy may be cached)",
+      "scope": {
+        "en": "Ranks AI models, not apps. A product is only linked when it is the same provider's assistant.",
+        "fr": "Classe des modèles d'IA, pas des applications. Un produit n'est lié que s'il s'agit de l'assistant du même fournisseur."
+      },
+      "omitted": null,
+      "entries": [
+        {
+          "rank": 1,
+          "model": "GPT-5.6 Sol (xHigh)",
+          "organization": "OpenAI",
+          "score": 1261,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "chatgpt"
+        },
+        {
+          "rank": 2,
+          "model": "Qwen3.8-Max",
+          "organization": "Alibaba",
+          "score": 1261,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": null
+        },
+        {
+          "rank": 3,
+          "model": "Claude Opus 4.6 (Search)",
+          "organization": "Anthropic",
+          "score": 1251,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 4,
+          "model": "GPT-5.5 (Search)",
+          "organization": "OpenAI",
+          "score": 1247,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "chatgpt"
+        },
+        {
+          "rank": 5,
+          "model": "Claude Fable 5.1 (High)",
+          "organization": "Anthropic",
+          "score": 1246,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 6,
+          "model": "Claude Opus 5 (High)",
+          "organization": "Anthropic",
+          "score": 1242,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 7,
+          "model": "GPT-6 Astra (Max)",
+          "organization": "OpenAI",
+          "score": 1234,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "chatgpt"
+        },
+        {
+          "rank": 8,
+          "model": "GPT-6.1 Sol (Max)",
+          "organization": "OpenAI",
+          "score": 1233,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "chatgpt"
+        },
+        {
+          "rank": 9,
+          "model": "Claude Opus 4.7",
+          "organization": "Anthropic",
+          "score": 1230,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        },
+        {
+          "rank": 10,
+          "model": "Claude Fable 5 (High)",
+          "organization": "Anthropic",
+          "score": 1229,
+          "preliminary": false,
+          "license": "Proprietary",
+          "relatedToolId": "claude"
+        }
+      ]
     }
   ]
 }
