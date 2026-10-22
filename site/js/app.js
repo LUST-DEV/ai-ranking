@@ -61,10 +61,14 @@ function logo(tool, size = "") {
 }
 
 /* ---------- routing ---------- */
-function parseHash() {
-  const raw = location.hash.replace(/^#\/?/, "");
-  const [path, query = ""] = raw.split("?");
-  return { parts: path.split("/").filter(Boolean).map(decodeURIComponent), params: new URLSearchParams(query) };
+function parsePath() {
+  const path = location.pathname.replace(/^\/+|\/+$/g, "");
+  return { parts: path.split("/").filter(Boolean).map(decodeURIComponent), params: new URLSearchParams(location.search) };
+}
+function navigate(url) {
+  if (url === location.pathname + location.search) return;
+  history.pushState(null, "", url);
+  render();
 }
 const DEFAULT_DESC = { en: "AI RANKING: an AI tools directory with official links and public model rankings. Our own scores appear only after a reviewed test.", fr: "AI RANKING : un annuaire d'outils d'IA avec liens officiels et classements publics de modèles. Nos propres scores n'apparaissent qu'après un test relu." };
 function setTitle(text, description) {
@@ -72,14 +76,14 @@ function setTitle(text, description) {
   document.querySelector('meta[name="description"]')?.setAttribute("content", (description || DEFAULT_DESC[state.lang]).slice(0, 300));
 }
 function crumbs(...items) {
-  const all = [[tr("brand"), "#/"], ...items];
+  const all = [[tr("brand"), "/"], ...items];
   return h("nav", { class: "crumbs", "aria-label": "Breadcrumb" }, h("ol", {}, all.map(([label, href], i) => h("li", {}, i === all.length - 1 ? h("span", { "aria-current": "page" }, label) : h("a", { href }, label)))));
 }
 
 function render() {
   document.documentElement.lang = state.lang;
   renderChrome();
-  const { parts, params } = parseHash();
+  const { parts, params } = parsePath();
   const [view, arg] = parts;
   root.replaceChildren();
   let node;
@@ -90,28 +94,28 @@ function render() {
   else if (view === "tool" && arg) node = toolView(arg);
   else if (view === "compare") node = compareView();
   else if (PAGES[view]) node = pageView(view);
-  else node = h("section", { class: "wrap" }, h("h1", {}, tr("notFound")), h("p", {}, tr("notFoundText")), h("a", { class: "btn", href: "#/directory" }, tr("nav.directory")));
+  else node = h("section", { class: "wrap" }, h("h1", {}, tr("notFound")), h("p", {}, tr("notFoundText")), h("a", { class: "btn", href: "/directory" }, tr("nav.directory")));
   root.append(node);
   root.focus({ preventScroll: true });
   window.scrollTo(0, 0);
 }
 
 function renderChrome() {
-  const { parts } = parseHash();
+  const { parts } = parsePath();
   const current = parts[0] ?? "";
   document.getElementById("nav").replaceChildren(
     ...["directory", "rankings", "compare", "methodology", "sources", "about"].map((k) =>
-      h("a", { href: "#/" + k, "aria-current": k === current ? "page" : null }, tr("nav." + k) + (k === "compare" && state.compare.length ? ` (${state.compare.length})` : "")),
+      h("a", { href: "/" + k, "aria-current": k === current ? "page" : null }, tr("nav." + k) + (k === "compare" && state.compare.length ? ` (${state.compare.length})` : "")),
     ),
   );
-  const sel = document.getElementById("lang");
-  sel.setAttribute("aria-label", tr("lang"));
-  sel.value = state.lang;
+  const seg = document.getElementById("lang");
+  seg.setAttribute("aria-label", tr("lang"));
+  for (const b of seg.querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang));
   document.getElementById("skip").textContent = tr("skip");
   document.getElementById("brand-text").textContent = tr("brand");
   applyTheme(currentTheme());
   const f = document.getElementById("footer-links");
-  f.replaceChildren(...["privacy", "terms", "cookies", "contact", "contribute"].map((p) => h("a", { href: "#/" + p }, tr("footerLinks." + p))));
+  f.replaceChildren(...["privacy", "terms", "cookies", "contact", "contribute"].map((p) => h("a", { href: "/" + p }, tr("footerLinks." + p))));
   if (isSafeHttpUrl(CONFIG.repoUrl)) f.append(extLink(CONFIG.repoUrl, tr("footerLinks.repo")));
   document.getElementById("disclaimer").textContent = tr("footerDisclaimer");
   document.getElementById("powered").textContent = tr("powered");
@@ -121,9 +125,9 @@ function renderChrome() {
 function benchmarkView(b) {
   const related = (r) => {
     const tool = state.tools.find((x) => x.id === r.relatedToolId);
-    return tool ? h("a", { href: "#/tool/" + tool.id }, tool.name) : "";
+    return tool ? h("a", { href: "/tool/" + tool.id }, tool.name) : "";
   };
-  return h("section", { class: "glass bench", "aria-label": b.title },
+  return h("section", { class: "surface bench", "aria-label": b.title },
     h("div", { class: "bench-head" },
       h("h3", {}, b.title),
       h("p", { class: "muted" }, `${tr("benchmark.note")} ${tr("benchmark.source")}: `, extLink(b.source.finalUrl, b.source.name), ` · ${tr("benchmark.updated")}: ${b.boardUpdated} · ${tr("benchmark.retrieved")}: ${b.retrieved}`)),
@@ -143,21 +147,21 @@ function homeView() {
       h("p", { class: "eyebrow" }, tr("hero.eyebrow")),
       h("h1", {}, tr("hero.title")),
       h("p", { class: "lead" }, tr("hero.text")),
-      h("div", { class: "actions" }, h("a", { class: "btn primary", href: "#/directory" }, tr("hero.browse")), h("a", { class: "btn", href: "#/rankings" }, tr("hero.rankings"))),
-      h("dl", { class: "stats" }, stats.map(([k, v]) => h("div", { class: "stat glass" }, h("dt", {}, tr("stat." + k)), h("dd", {}, String(v))))),
+      h("div", { class: "actions" }, h("a", { class: "btn primary", href: "/directory" }, tr("hero.browse")), h("a", { class: "btn", href: "/rankings" }, tr("hero.rankings"))),
+      h("dl", { class: "stats" }, stats.map(([k, v]) => h("div", { class: "stat surface" }, h("dt", {}, tr("stat." + k)), h("dd", {}, String(v))))),
     ),
     h("section", { class: "wrap", "aria-labelledby": "snap" },
       h("h2", { id: "snap" }, tr("snapshot.title")), h("p", { class: "muted" }, tr("snapshot.text")),
-      h("div", { class: "grid wide" }, state.benchmarks.map((b) => h("article", { class: "glass snap" },
+      h("div", { class: "grid wide" }, state.benchmarks.map((b) => h("article", { class: "surface snap" },
         h("p", { class: "eyebrow" }, catName(b.categoryId)),
         h("h3", {}, b.title),
         h("ol", { class: "top3" }, topEntries(b, 3).map((r) => h("li", {}, h("span", {}, r.model), h("small", { class: "muted" }, r.organization), h("strong", {}, String(r.score))))),
-        h("p", { class: "small" }, h("a", { href: "#/rankings/" + b.categoryId }, tr("snapshot.full")), ` · ${b.boardUpdated}`))))),
+        h("p", { class: "small" }, h("a", { href: "/rankings/" + b.categoryId }, tr("snapshot.full")), ` · ${b.boardUpdated}`))))),
     h("section", { class: "wrap", "aria-labelledby": "cats" },
       h("h2", { id: "cats" }, tr("browseCategories")),
       h("ul", { class: "grid" }, state.categories.map((c) => {
         const n = state.tools.filter((x) => x.categories.primary === c.id).length;
-        return h("li", {}, h("a", { class: "card glass", href: "#/category/" + c.id }, h("strong", {}, loc(c.name)), h("span", { class: "muted" }, loc(c.description)), h("span", { class: "count" }, tr("toolsCount", { n }))));
+        return h("li", {}, h("a", { class: "card surface", href: "/category/" + c.id }, h("strong", {}, loc(c.name)), h("span", { class: "muted" }, loc(c.description)), h("span", { class: "count" }, tr("toolsCount", { n }))));
       })),
     ),
   );
@@ -169,9 +173,9 @@ function rankingsView(arg) {
   setTitle(`${tr("rankings.title")}: ${catName(id)}`, tr("rankings.text"));
   const wrap = h("section", { class: "wrap" },
     h("h1", {}, tr("rankings.title")), h("p", { class: "lead" }, tr("rankings.text")),
-    h("nav", { class: "tabs", "aria-label": tr("rankings.pick") }, withBoards.map((c) => h("a", { href: "#/rankings/" + c.id, "aria-current": c.id === id ? "page" : null }, loc(c.name)))));
+    h("nav", { class: "tabs", "aria-label": tr("rankings.pick") }, withBoards.map((c) => h("a", { href: "/rankings/" + c.id, "aria-current": c.id === id ? "page" : null }, loc(c.name)))));
   for (const b of state.benchmarks.filter((x) => x.categoryId === id)) wrap.append(benchmarkView(b));
-  if (id) wrap.append(h("p", {}, h("a", { class: "btn", href: "#/category/" + id }, catName(id))));
+  if (id) wrap.append(h("p", {}, h("a", { class: "btn", href: "/category/" + id }, catName(id))));
   return wrap;
 }
 
@@ -187,10 +191,10 @@ function announce(msg) { const el = document.getElementById("live"); el.textCont
 
 function toolRow(tool) {
   const inCompare = state.compare.includes(tool.id);
-  return h("li", { class: "tool glass" },
+  return h("li", { class: "tool surface" },
     logo(tool),
     h("div", { class: "grow" },
-      h("h3", {}, h("a", { href: "#/tool/" + tool.id }, tool.name)),
+      h("h3", {}, h("a", { href: "/tool/" + tool.id }, tool.name)),
       h("p", { class: "muted" }, `${tool.provider} · ${catName(tool.categories.primary)}`),
       h("p", {}, loc(tool.description)),
       h("p", { class: "badges" }, verifiedBadge(tool), freeBadge(tool)),
@@ -210,7 +214,7 @@ function directoryView(params) {
   const selCat = h("select", { onchange: (e) => { f.category = e.target.value; f.page = 1; draw(); } }, h("option", { value: "" }, tr("allCategories")), state.categories.map((c) => h("option", { value: c.id, selected: c.id === f.category }, loc(c.name))));
   const selFree = h("select", { onchange: (e) => { f.free = e.target.value === "free"; f.page = 1; draw(); } }, h("option", { value: "" }, tr("anyOffer")), h("option", { value: "free", selected: f.free }, tr("freeOnly")));
   const selSort = h("select", { onchange: (e) => { f.sort = e.target.value; draw(); } }, [["name", "sortName"], ["provider", "sortProvider"], ["category", "sortCategory"]].map(([v, k]) => h("option", { value: v, selected: v === f.sort }, tr(k))));
-  wrap.append(h("div", { class: "filters glass", role: "search" }, field(tr("search"), input), field(tr("category"), selCat), field(tr("freeFilter"), selFree), field(tr("sort"), selSort)), results);
+  wrap.append(h("div", { class: "filters surface", role: "search" }, field(tr("search"), input), field(tr("category"), selCat), field(tr("freeFilter"), selFree), field(tr("sort"), selSort)), results);
   function draw() {
     const list = sortTools(filterTools(state.tools, { category: f.category, free: f.free, query: f.q, lang: state.lang }), f.sort);
     const pg = paginate(list, f.page, PAGE_SIZE);
@@ -218,7 +222,7 @@ function directoryView(params) {
     results.replaceChildren();
     results.append(h("p", { class: "muted" }, tr("results", { n: pg.total })));
     if (!pg.total) {
-      results.append(h("div", { class: "empty glass" }, h("p", {}, tr("emptyResults")), h("button", { type: "button", class: "btn", onclick: () => { Object.assign(f, { q: "", category: "", free: false, page: 1 }); render(); } }, tr("reset"))));
+      results.append(h("div", { class: "empty surface" }, h("p", {}, tr("emptyResults")), h("button", { type: "button", class: "btn", onclick: () => { Object.assign(f, { q: "", category: "", free: false, page: 1 }); render(); } }, tr("reset"))));
       return;
     }
     results.append(h("ul", { class: "list" }, pg.items.map(toolRow)));
@@ -233,49 +237,49 @@ function directoryView(params) {
 
 function categoryView(id) {
   const cat = state.categories.find((c) => c.id === id);
-  if (!cat) return h("section", { class: "wrap" }, h("h1", {}, tr("notFound")), h("a", { class: "btn", href: "#/directory" }, tr("nav.directory")));
+  if (!cat) return h("section", { class: "wrap" }, h("h1", {}, tr("notFound")), h("a", { class: "btn", href: "/directory" }, tr("nav.directory")));
   setTitle(loc(cat.name), loc(cat.description));
   const { ranked, notEvaluated } = rankingFor(id, state.tools, state.evaluations);
   const wrap = h("section", { class: "wrap" },
-    crumbs([tr("nav.directory"), "#/directory"], [loc(cat.name), "#/category/" + id]),
-    h("nav", { class: "tabs", "aria-label": tr("category") }, state.categories.map((c) => h("a", { href: "#/category/" + c.id, "aria-current": c.id === id ? "page" : null }, loc(c.name)))),
+    crumbs([tr("nav.directory"), "/directory"], [loc(cat.name), "/category/" + id]),
+    h("nav", { class: "tabs", "aria-label": tr("category") }, state.categories.map((c) => h("a", { href: "/category/" + c.id, "aria-current": c.id === id ? "page" : null }, loc(c.name)))),
     h("h1", {}, loc(cat.name)), h("p", { class: "lead" }, loc(cat.description)));
   const boards = state.benchmarks.filter((b) => b.categoryId === id);
   for (const b of boards) wrap.append(benchmarkView(b));
   if (!boards.length) wrap.append(h("p", { class: "muted" }, tr("benchmark.none")));
   wrap.append(h("h2", {}, tr("ownRanking")));
   if (ranked.length) {
-    wrap.append(h("p", { class: "muted" }, tr("ownRankingBasis")), h("ol", { class: "list" }, ranked.map((r) => h("li", { class: "tool glass" }, logo(r.tool), h("div", { class: "grow" }, h("h3", {}, `${r.rank}. `, h("a", { href: "#/tool/" + r.tool.id }, r.tool.name)), h("p", { class: "muted" }, r.tool.provider)), h("strong", { class: "score" }, `${r.evaluation.score}/100`)))));
+    wrap.append(h("p", { class: "muted" }, tr("ownRankingBasis")), h("ol", { class: "list" }, ranked.map((r) => h("li", { class: "tool surface" }, logo(r.tool), h("div", { class: "grow" }, h("h3", {}, `${r.rank}. `, h("a", { href: "/tool/" + r.tool.id }, r.tool.name)), h("p", { class: "muted" }, r.tool.provider)), h("strong", { class: "score" }, `${r.evaluation.score}/100`)))));
   } else wrap.append(h("p", { class: "muted" }, tr("ownRankingNone")));
   const unranked = ranked.length ? notEvaluated : [...notEvaluated];
-  if (!unranked.length && !ranked.length) wrap.append(h("div", { class: "empty glass" }, h("p", {}, tr("emptyCategory")), h("a", { class: "btn", href: "#/contribute" }, tr("footerLinks.contribute"))));
+  if (!unranked.length && !ranked.length) wrap.append(h("div", { class: "empty surface" }, h("p", {}, tr("emptyCategory")), h("a", { class: "btn", href: "/contribute" }, tr("footerLinks.contribute"))));
   else if (unranked.length) wrap.append(h("h2", {}, tr("directory")), h("ul", { class: "list" }, unranked.map(toolRow)));
   return wrap;
 }
 
 function toolView(id) {
   const tool = state.tools.find((x) => x.id === id);
-  if (!tool) return h("section", { class: "wrap" }, h("h1", {}, tr("notFound")), h("p", {}, tr("toolNotFound")), h("a", { class: "btn", href: "#/directory" }, tr("nav.directory")));
+  if (!tool) return h("section", { class: "wrap" }, h("h1", {}, tr("notFound")), h("p", {}, tr("toolNotFound")), h("a", { class: "btn", href: "/directory" }, tr("nav.directory")));
   setTitle(tool.name, `${tool.name} (${tool.provider}): ${loc(tool.description)}`);
   const evals = state.evaluations.filter((e) => e.toolId === id && isPublishable(e)).sort((a, b) => b.evaluationDate.localeCompare(a.evaluationDate));
   const row = (k, v) => (v == null ? null : h("div", { class: "kv" }, h("dt", {}, k), h("dd", {}, v)));
   const u = tool.urls;
   const inCompare = state.compare.includes(id);
   return h("section", { class: "wrap narrow" },
-    crumbs([tr("nav.directory"), "#/directory"], [catName(tool.categories.primary), "#/category/" + tool.categories.primary], [tool.name, "#/tool/" + id]),
+    crumbs([tr("nav.directory"), "/directory"], [catName(tool.categories.primary), "/category/" + tool.categories.primary], [tool.name, "/tool/" + id]),
     h("div", { class: "title-row" }, logo(tool, "big"), h("div", {}, h("h1", {}, tool.name), h("p", { class: "muted" }, `${tool.provider} · ${catName(tool.categories.primary)}`))),
     h("p", { class: "lead" }, loc(tool.description)),
     tool.notes ? h("p", { class: "notice", role: "note" }, h("strong", {}, tr("notes") + ": "), loc(tool.notes)) : null,
     h("p", { class: "badges" }, verifiedBadge(tool), freeBadge(tool)),
     tool.freeOfferMentioned ? h("p", { class: "muted small" }, tr("freeOfferHelp")) : null,
     h("p", {}, h("button", { type: "button", class: "btn small", "aria-pressed": String(inCompare), onclick: () => toggleCompare(id) }, inCompare ? tr("removeCompare") : tr("addCompare"))),
-    h("div", { class: "glass panel" }, h("h2", {}, tr("officialLinks")),
+    h("div", { class: "surface panel" }, h("h2", {}, tr("officialLinks")),
       h("dl", {}, row(tr("product"), extLink(u.product, u.product)), u.docs ? row(tr("docs"), extLink(u.docs, u.docs)) : null, u.repository ? row(tr("repository"), extLink(u.repository, u.repository)) : null, u.pricing ? row(tr("pricing"), extLink(u.pricing, u.pricing)) : null)),
-    tool.verification.status === "verified" ? h("div", { class: "glass panel" }, h("h2", {}, tr("verification")),
+    tool.verification.status === "verified" ? h("div", { class: "surface panel" }, h("h2", {}, tr("verification")),
       h("p", {}, "✓ " + tr("verifiedOn", { d: tool.verification.lastVerified })),
       h("dl", {}, row(tr("evidenceUrl"), extLink(tool.verification.evidenceUrl, tool.verification.evidenceUrl)))) : null,
-    h("div", { class: "glass panel" }, h("h2", {}, tr("limitations")), h("p", {}, loc(tool.limitations))),
-    h("div", { class: "glass panel" }, h("h2", {}, tr("evalHistory")),
+    h("div", { class: "surface panel" }, h("h2", {}, tr("limitations")), h("p", {}, loc(tool.limitations))),
+    h("div", { class: "surface panel" }, h("h2", {}, tr("evalHistory")),
       evals.length ? h("ul", { class: "list" }, evals.map((e) => h("li", {}, h("strong", {}, `${e.score}/100`), h("p", { class: "muted" }, `${e.evaluationDate} · ${e.basis} · v${e.protocolVersion}`), h("p", {}, e.limitations)))) : h("p", { class: "muted" }, tr("noEval"))),
   );
 }
@@ -284,7 +288,7 @@ function compareView() {
   setTitle(tr("compare"));
   const wrap = h("section", { class: "wrap" }, h("h1", {}, tr("compare")), h("p", { class: "muted" }, tr("compareHelp")));
   const picked = state.compare.map((tid) => state.tools.find((x) => x.id === tid)).filter(Boolean);
-  if (!picked.length) { wrap.append(h("div", { class: "empty glass" }, h("p", {}, tr("compareEmpty")), h("a", { class: "btn", href: "#/directory" }, tr("nav.directory")))); return wrap; }
+  if (!picked.length) { wrap.append(h("div", { class: "empty surface" }, h("p", {}, tr("compareEmpty")), h("a", { class: "btn", href: "/directory" }, tr("nav.directory")))); return wrap; }
   const rows = [
     [tr("provider"), (x) => x.provider], [tr("category"), (x) => catName(x.categories.primary)],
     [tr("freeOffer"), (x) => (x.freeOfferMentioned ? tr("yes") : tr("notProvided"))],
@@ -293,8 +297,8 @@ function compareView() {
     [tr("verification"), (x) => (x.verification.status === "verified" ? tr("verifiedOn", { d: x.verification.lastVerified }) : tr("notProvided"))],
   ];
   wrap.append(h("p", {}, tr("compareCount", { n: picked.length })),
-    h("div", { class: "table-wrap glass", tabindex: "0", role: "region", "aria-label": tr("compare") },
-      h("table", {}, h("thead", {}, h("tr", {}, h("th", { scope: "col" }, tr("field")), picked.map((x) => h("th", { scope: "col" }, logo(x, "small"), " ", h("a", { href: "#/tool/" + x.id }, x.name))))),
+    h("div", { class: "table-wrap surface", tabindex: "0", role: "region", "aria-label": tr("compare") },
+      h("table", {}, h("thead", {}, h("tr", {}, h("th", { scope: "col" }, tr("field")), picked.map((x) => h("th", { scope: "col" }, logo(x, "small"), " ", h("a", { href: "/tool/" + x.id }, x.name))))),
         h("tbody", {}, rows.map(([label, fn]) => h("tr", {}, h("th", { scope: "row" }, label), picked.map((x) => h("td", {}, fn(x)))))))),
     h("button", { type: "button", class: "btn", onclick: () => { state.compare = []; store("compare", []); render(); } }, tr("clearCompare")));
   return wrap;
@@ -304,7 +308,7 @@ function pageView(key) {
   const entry = PAGES[key];
   const page = entry[state.lang] ?? entry.en;
   setTitle(page.title);
-  const wrap = h("article", { class: "wrap narrow glass panel prose" }, h("h1", {}, page.title));
+  const wrap = h("article", { class: "wrap narrow surface panel prose" }, h("h1", {}, page.title));
   if (entry.legal) wrap.append(h("p", { class: "notice", role: "note" }, tr("draft")));
   for (const s of page.sections) wrap.append(h("h2", {}, s.h), ...s.p.map((p) => h("p", {}, p)));
   if (key === "contact") {
@@ -324,13 +328,26 @@ async function boot() {
   const saved = load("lang", null);
   state.lang = saved === "fr" || saved === "en" ? saved : navigator.language?.toLowerCase().startsWith("fr") ? "fr" : "en";
   const stored = load("compare", []);
-  document.getElementById("lang").addEventListener("change", (e) => { state.lang = e.target.value === "fr" ? "fr" : "en"; store("lang", state.lang); render(); });
+  document.getElementById("lang").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-lang]");
+    if (!b) return;
+    state.lang = b.dataset.lang === "fr" ? "fr" : "en"; store("lang", state.lang); render();
+  });
+  // Internal links navigate without a page reload; everything else behaves normally.
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[href]");
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target || a.hasAttribute("download")) return;
+    const href = a.getAttribute("href");
+    if (!href.startsWith("/") || href.startsWith("//")) return;
+    e.preventDefault();
+    navigate(href);
+  });
+  window.addEventListener("popstate", render);
   document.getElementById("theme").addEventListener("click", () => { const next = currentTheme() === "dark" ? "light" : "dark"; store("theme", next); applyTheme(next); });
-  window.addEventListener("hashchange", render);
   root.replaceChildren(h("p", { class: "wrap", role: "status" }, tr("loading")));
   renderChrome();
   try {
-    const [tools, cats, evals, bench] = await Promise.all([fetchJson("data/tools.json"), fetchJson("data/categories.json"), fetchJson("data/evaluations.json"), fetchJson("data/benchmarks.json")]);
+    const [tools, cats, evals, bench] = await Promise.all([fetchJson("/data/tools.json"), fetchJson("/data/categories.json"), fetchJson("/data/evaluations.json"), fetchJson("/data/benchmarks.json")]);
     state.tools = tools.tools; state.categories = cats.categories; state.evaluations = evals.evaluations; state.benchmarks = bench.benchmarks;
     state.compare = Array.isArray(stored) ? stored.filter((tid) => state.tools.some((x) => x.id === tid)).slice(0, MAX_COMPARE) : [];
     render();

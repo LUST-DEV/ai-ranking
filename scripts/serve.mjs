@@ -11,6 +11,7 @@ createServer(async (req, res) => {
   const path = normalize(decodeURIComponent(new URL(req.url, "http://x").pathname)).replace(/^(\.\.[/\\])+/, "");
   const file = join(root, path === "/" || path === "." ? "index.html" : path);
   if (!file.startsWith(root)) { res.writeHead(403).end("Forbidden"); return; }
-  try { const body = await readFile(file); res.writeHead(200, { ...security, "content-type": types[extname(file)] ?? "application/octet-stream" }).end(body); }
-  catch { res.writeHead(404, { "content-type": "text/plain" }).end("Not found"); }
+  const send = async (f, status = 200) => { const body = await readFile(f); res.writeHead(status, { ...security, "content-type": types[extname(f)] ?? "application/octet-stream" }).end(body); };
+  try { await send(extname(file) ? file : join(file, "index.html")); }
+  catch { try { await send(join(root, "404.html"), 404); } catch { res.writeHead(404, { "content-type": "text/plain" }).end("Not found"); } }
 }).listen(Number(process.env.PORT ?? 4173), "127.0.0.1", () => console.log("Preview on http://127.0.0.1:" + (process.env.PORT ?? 4173)));

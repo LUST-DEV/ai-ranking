@@ -2,9 +2,9 @@
 
 [English](README.md)
 
-Un annuaire bilingue (EN/FR) d'outils d'IA avec liens officiels et classements publics de modèles, en interface verre dépoli avec thèmes clair et sombre. Par LUST DEV. **Un score n'est affiché qu'après un test documenté relu par un second mainteneur.** D'ici là, l'outil est marqué « Pas encore évalué ».
+Un annuaire bilingue (EN/FR) d'outils d'IA avec liens officiels et classements publics de modèles, en interface rapide à ombres et dégradés, avec thèmes clair et sombre. Par LUST DEV. **Un score n'est affiché qu'après un test documenté relu par un second mainteneur.** D'ici là, l'outil est marqué « Pas encore évalué ».
 
-> **État : v0.3.** 35 outils dans 13 catégories. **35 pages officielles contrôlées** (définition ci-dessous), **0 outil évalué** par nos propres tests, et **5 classements publics** d'Arena (anciennement LMArena) : texte, développement web (code), recherche, image et vidéo. Le catalogue ne prétend pas lister tous les outils d'IA. Site en ligne : pas encore déployé.
+> **État : v0.4.** 35 outils dans 13 catégories. **35 pages officielles contrôlées** (définition ci-dessous), **0 outil évalué** par nos propres tests, et **5 classements publics** d'Arena (anciennement LMArena) : texte, développement web (code), recherche, image et vidéo. Le catalogue ne prétend pas lister tous les outils d'IA. Site en ligne : pas encore déployé.
 
 **« Vérifiée » signifie :** le 2026-10-18, la page officielle de l'entrée a été ouverte (via Firecrawl, éventuellement une copie en cache de quelques jours), a répondu normalement et nomme le produit. Cela ne veut **pas** dire testé, et tarifs, modèle d'accès, API et licences restent vides sauf si la page les indique. La vérification a révélé des changements réels, signalés en notes sur les fiches (par exemple Le Chat devient « Vibe by Mistral », NotebookLM devient « Gemini Notebook », Continue indique avoir été acquis par Cursor).
 
@@ -13,7 +13,8 @@ Un annuaire bilingue (EN/FR) d'outils d'IA avec liens officiels et classements p
 - Pages de catégorie avec classements issus uniquement d'évaluations relues
 - Fiches : liens officiels, source de découverte, statut de vérification, limites, historique
 - Comparaison de jusqu'à quatre outils
-- Thèmes clair et sombre (suit le système, mémorisé, interrupteur dans l'en-tête), interface en verre dépoli
+- Thèmes clair et sombre (suit le système, mémorisé, interrupteur dans l'en-tête). Ombres en couches et dégradés radiaux, sans flou, sans animation, sans zoom au survol
+- URL propres (`/tool/claude`, `/rankings/coding`), chacune pré-générée au build avec son titre, sa description et son titre de page ; navigation sans rechargement (22 Ko de JS et CSS compressés)
 - Interface FR/EN, fil d'Ariane, titres et descriptions par page, navigation clavier, focus visible, respect de « réduire les animations »
 - Méthodologie, sources, confidentialité, conditions et cookies (pages légales en brouillon)
 - Aucune mesure d'audience, aucun cookie, aucune requête tierce
@@ -47,7 +48,7 @@ Chaque outil enregistre `icon.sourceUrl`, le favicon déclaré par son site offi
 5. Option : domaine personnalisé. Rendre le dépôt public et activer la protection de branche.
 
 ## Limites connues
-Icônes non incluses (pas de réseau dans l'environnement de build) ; routes à hash (métadonnées gérées par JavaScript) ; benchmarks d'une seule source (Arena), rien pour l'audio ou la 3D.
+Icônes non incluses (pas de réseau dans l'environnement de build) ; métadonnées pré-générées en anglais seulement ; benchmarks d'une seule source (Arena), rien pour l'audio ou la 3D.
 Routes à base de hash (seule l'accueil figure au sitemap) ; pas encore d'audit d'accessibilité automatisé dans un navigateur ; pages légales en brouillon ; le contrôle des liens peut produire des faux positifs.
 
 ## Contribuer, licence, marques

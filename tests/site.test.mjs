@@ -33,23 +33,27 @@ test("HTML basics: lang, viewport, skip link, main landmark, labelled controls",
   assert.match(html, /name="viewport"/);
   assert.match(html, /class="skip"/);
   assert.match(html, /<main id="app"/);
-  assert.match(html, /<select id="lang" aria-label=/);
+  assert.match(html, /id="lang"[^>]*role="group"[^>]*aria-label=/);
+  assert.match(html, /<link rel="stylesheet" href="\/css\/styles\.css">/, "absolute asset paths so clean URLs work");
   assert.doesNotMatch(html, /<script(?![^>]*\bsrc=)/i, "no inline scripts (CSP)");
   assert.doesNotMatch(html, /\sstyle=/i, "no inline styles (CSP)");
 });
-test("CSS honours reduced motion, visible focus, both themes and a glass fallback", async () => {
+test("CSS: both themes, layered shadows, radial gradients, fast (no blur, no animation, no hover zoom)", async () => {
   const css = await read("site/css/styles.css");
-  assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(css, /:focus-visible/);
   assert.match(css, /data-theme="light"/);
   assert.match(css, /data-theme="dark"/);
-  assert.match(css, /@supports not/);
-  assert.match(css, /backdrop-filter/);
+  assert.match(css, /radial-gradient/);
+  assert.match(css, /box-shadow/);
+  assert.doesNotMatch(css, /backdrop-filter|filter:\s*blur|@keyframes|animation:/, "no costly effects");
+  const hoverRules = css.match(/[^{}]*:hover[^{}]*\{[^}]*\}/g) ?? [];
+  for (const r of hoverRules) assert.doesNotMatch(r, /transform|scale\(|translate/, "no zoom/lift on hover: " + r.trim());
+  assert.doesNotMatch(css, /scroll-behavior:\s*smooth/);
 });
 test("theme switch is an accessible button and its script runs from a file (CSP)", async () => {
   const html = await read("site/index.html");
   assert.match(html, /<button id="theme"[^>]*role="switch"[^>]*aria-checked/);
-  assert.match(html, /<script src="js\/theme\.js"><\/script>/);
+  assert.match(html, /<script src="\/js\/theme\.js"><\/script>/);
   const js = await read("site/js/theme.js");
   assert.match(js, /prefers-color-scheme: light/);
 });
@@ -81,6 +85,13 @@ test("build produces dist with data, robots, and refuses a bad SITE_URL", async 
   assert.match(await read("dist/sitemap.xml"), /https:\/\/example\.org\//);
   const html = await read("dist/index.html");
   assert.match(html, /<link rel="canonical" href="https:\/\/example\.org\/">/);
+  const tool = await read("dist/tool/claude/index.html");
+  assert.match(tool, /<title>Claude · AI RANKING<\/title>/);
+  assert.match(tool, /<link rel="canonical" href="https:\/\/example\.org\/tool\/claude">/);
+  assert.match(tool, /<h1>Claude<\/h1>/);
+  assert.match(await read("dist/rankings/coding/index.html"), /<title>Rankings: Coding · AI RANKING<\/title>/);
+  assert.match(await read("dist/sitemap.xml"), /https:\/\/example\.org\/tool\/claude/);
+  assert.match(await read("dist/sitemap.xml"), /https:\/\/example\.org\/privacy/);
   assert.match(html, /og:image" content="https:\/\/example\.org\/og\.png"/);
   assert.match(html, /summary_large_image/);
   const ld = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
@@ -96,6 +107,7 @@ test("build produces dist with data, robots, and refuses a bad SITE_URL", async 
   assert.equal(plain.status, 0, plain.stderr);
   const noUrl = await read("dist/index.html");
   assert.doesNotMatch(noUrl, /rel="canonical"|ld\+json|og:image"/, "no absolute metadata without a real SITE_URL");
+  assert.doesNotMatch(await read("dist/tool/claude/index.html"), /rel="canonical"/);
   assert.doesNotMatch(await read("dist/robots.txt"), /Sitemap: http/);
 });
 test("no placeholder text ships in the site source", async () => {
